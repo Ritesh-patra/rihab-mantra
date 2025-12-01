@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehab Mantra - Rehabilitation Center</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        * {
+            font-family: 'Sora', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .primary-blue {
+            color: #0B4799;
+        }
+
+        .accent-orange {
+            color: #FE7303;
+        }
+
+        .gold-yellow {
+            color: #FFB71B;
+        }
+
+        .bg-primary {
+            background-color: #0B4799;
+        }
+
+        .bg-accent {
+            background-color: #FE7303;
+        }
+
+        .bg-gold {
+            background-color: #FFB71B;
+        }
+
+        .bg-light {
+            background-color: #FEFEFE;
+        }
+
+        .text-light {
+            color: #FEFEFE;
+        }
+
+        .text-dark-blue {
+            color: #0B4799;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            /* height: 100%; */
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes slideUpIn {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes floatBounce {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(254, 115, 3, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(254, 115, 3, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(254, 115, 3, 0);
+            }
+        }
+
+        @keyframes slide-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-slide-up {
+            animation: slideUpIn 0.8s ease-out;
+        }
+
+        .animate-slide-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .animate-slide-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .animate-scale {
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .animate-float {
+            animation: floatBounce 3s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        .animate-pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+
+        .hero-blob {
+            width: 400px;
+            height: 400px;
+            background-color: #FE7303;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            opacity: 0.15;
+            filter: blur(40px);
+            animation: floatBounce 6s ease-in-out infinite;
+        }
+
+        .service-scroll-container {
+            scroll-behavior: smooth;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+        }
+
+        .service-card {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            flex: 0 0 100%;
+        }
+
+        .image-placeholder {
+            background: linear-color-stop(#0B4799);
+            opacity: 0.1;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        .floating-icon {
+            animation: floatBounce 4s ease-in-out infinite;
+        }
+
+        .button-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button-ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .button-ripple:active::after {
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            to {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full    bg-light shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="images/logo.png" alt="Rehab Mantra Logo"
+                    class="w-14 h-14 rounded-full object-cover shadow-md">
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#home" class="text-dark-blue hover:text-accent-orange transition">Home</a>
+                <a href="#about" class="text-dark-blue hover:text-accent-orange transition">About</a>
+                <a href="#services" class="text-dark-blue hover:text-accent-orange transition">Services</a>
+                <a href="#why-choose" class="text-dark-blue hover:text-accent-orange transition">Why Us</a>
+                <a href="#team" class="text-dark-blue hover:text-accent-orange transition">Team</a>
+                <a href="#contact" class="text-dark-blue hover:text-accent-orange transition">Contact</a>
+                <button
+                    class="button-ripple bg-accent text-light px-6 py-2 rounded-lg font-semibold hover:scale-105 transition">Book
+                    Now</button>
+            </div>
+            <button class="md:hidden text-dark-blue" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed top-20 left-0 right-0 bg-light shadow-lg z-40 md:hidden">
+        <div class="flex flex-col gap-4 p-6">
+            <a href="#home" class="text-dark-blue hover:text-accent-orange transition">Home</a>
+            <a href="#about" class="text-dark-blue hover:text-accent-orange transition">About</a>
+            <a href="#services" class="text-dark-blue hover:text-accent-orange transition">Services</a>
+            <a href="#why-choose" class="text-dark-blue hover:text-accent-orange transition">Why Us</a>
+            <a href="#team" class="text-dark-blue hover:text-accent-orange transition">Team</a>
+            <a href="#contact" class="text-dark-blue hover:text-accent-orange transition">Contact</a>
+            <button class="button-ripple bg-accent text-light px-6 py-2 rounded-lg font-semibold">Book Now</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen w-full pt-20 bg-light flex items-center justify-center overflow-hidden">
+        <div class="absolute left-0 top-1/2 hero-blob"></div>
+        <div class="absolute right-0 top-1/4 hero-blob"
+            style="width: 300px; height: 300px; animation-delay: 1s; background-color: #FFB71B;"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 mt-10 animate-slide-left">
+                <h1 class="text-5xl md:text-6xl font-bold text-dark-blue leading-tight">
+                    Your Path to <span class="accent-orange">Recovery</span> Starts Here
+                </h1>
+                <p class="text-lg text-gray-600">
+                    Advanced rehabilitation services designed to restore your mobility, strength, and confidence. Our
+                    expert team is committed to helping you achieve your health goals.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="button-ripple bg-accent text-light px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition">
+                        Start Your Journey
+                    </button>
+                    <button
+                        class="button-ripple border-2 border-dark-blue text-dark-blue px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition">
+                        Learn More
+                    </button>
+                </div>
+                <div class="flex gap-8 pt-4">
+                    <div class="animate-float">
+                        <p class="text-4xl font-bold text-dark-blue counter">500</p>
+                        <p class="text-gray-600">Patients Recovered</p>
+                    </div>
+                    <div class="animate-float" style="animation-delay: 0.5s;">
+                        <p class="text-4xl font-bold accent-orange counter">15</p>
+                        <p class="text-gray-600">Years Experience</p>
+                    </div>
+                    <div class="animate-float" style="animation-delay: 1s;">
+                        <p class="text-4xl font-bold text-gold-yellow counter">50</p>
+                        <p class="text-gray-600">Expert Therapists</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animate-slide-right">
+                <div class="w-full h-96 bg-dark-blue rounded-2xl shadow-2xl overflow-hidden">
+
+                    <!-- Swiper Container -->
+                    <div class="swiper mySwiper h-full">
+
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <img src="images/landing1.avif" class="w-full h-full object-cover" alt="">
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <img src="images/landing2.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide">
+                                <img src="images/landing3.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="swiper-slide">
+                                <img src="images/landing4.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Pagination Dots -->
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 animate-slide-left">
+                    <div
+                        class="h-96 bg-gold rounded-2xl flex items-center justify-center shadow-lg hover:scale-105 transition duration-500">
+                        <i class="fas fa-hospital-user text-6xl text-light animate-float"></i>
+                    </div>
+
+                </div>
+
+                <div class="space-y-6 animate-slide-right">
+                    <h2 class="text-4xl font-bold text-dark-blue">About Rehab Mantra</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Rehab Mantra is a state-of-the-art rehabilitation center dedicated to providing comprehensive,
+                        compassionate care for individuals recovering from injuries, surgeries, and chronic conditions.
+                        With
+                        over 15 years of experience, we've helped thousands of patients regain their independence and
+                        quality
+                        of life.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Our multidisciplinary team combines cutting-edge therapy techniques with personalized treatment
+                        plans
+                        to ensure each patient receives the specialized care they deserve. We believe in empowering our
+                        patients to achieve their maximum potential.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 mt-5 gap-4">
+                <div class="p-4 bg-accent bg-opacity-10 rounded-lg">
+                    <i class="fas fa-award text-2xl text-accent mb-2"></i>
+                    <p class="font-semibold text-dark-blue">Certified Team</p>
+                </div>
+                <div class="p-4 bg-gold bg-opacity-10 rounded-lg">
+                    <i class="fas fa-clinic-medical text-2xl text-gold-yellow mb-2"></i>
+                    <p class="font-semibold text-dark-blue">Modern Equipment</p>
+                </div>
+                <div class="p-4 bg-accent bg-opacity-10 rounded-lg">
+                    <i class="fas fa-chart-line text-2xl text-accent mb-2"></i>
+                    <p class="font-semibold text-dark-blue">Proven Results</p>
+                </div>
+                <div class="p-4 bg-gold bg-opacity-10 rounded-lg">
+                    <i class="fas fa-smile text-2xl text-gold-yellow mb-2"></i>
+                    <p class="font-semibold text-dark-blue">Patient Focused</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="py- bg-dark-blue text-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-dark-blue">Why Choose Rehab Mantra?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                    class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale">
+                    <i class="fas fa-users text-4xl text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Expert Team</h3>
+                    <p class="text-light text-opacity-90">Our highly qualified physiotherapists, occupational
+                        therapists, and speech-language pathologists bring years of experience and dedication to every
+                        patient case.</p>
+                </div>
+
+                <div class="p-8 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.2s;">
+                    <i class="fas fa-cog text-4xl text-gold-yellow mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Advanced Technology</h3>
+                    <p class="text-light text-opacity-90">We utilize the latest rehabilitation equipment and techniques
+                        including robotic therapy, virtual reality training, and biomechanical analysis systems.</p>
+                </div>
+
+                <div class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.4s;">
+                    <i class="fas fa-handshake text-4xl text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Personalized Care</h3>
+                    <p class="text-light text-opacity-90">Each patient receives a customized treatment plan tailored to
+                        their specific needs, goals, and medical history for optimal outcomes.</p>
+                </div>
+
+                <div class="p-8 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.6s;">
+                    <i class="fas fa-star text-4xl text-gold-yellow mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Proven Success</h3>
+                    <p class="text-light text-opacity-90">With a 95% patient satisfaction rate and countless success
+                        stories, we're committed to delivering exceptional results and life-changing outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - SCROLLABLE -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-[#0B4799] mb-4">Our Comprehensive Services</h2>
+                    <p class="text-gray-700 text-lg max-w-3xl">
+                        We offer a comprehensive range of rehabilitative, therapeutic, and diagnostic services tailored
+                        to
+                        individual needs.
+                    </p>
+                </div>
+
+                <div
+                    class="hidden md:flex items-center gap-3 flex-shrink-0 order-3 md:order-none w-full md:w-auto justify-start md:justify-end">
+
+                    <a href="#services"
+                        class="bg-[#FE7303] hover:bg-[#C75B00] text-white px-6 py-3 rounded-full font-semibold transition flex items-center gap-2">
+                        View All <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <button id="prevServiceBtn"
+                        class="w-12 h-12 border-2 border-[#FE7303] rounded-full flex items-center justify-center hover:border-[#C75B00] transition">
+                        <i class="fas fa-chevron-left text-[#FE7303]"></i>
+                    </button>
+
+                    <button id="nextServiceBtn"
+                        class="w-12 h-12 border-2 border-[#FE7303] rounded-full flex items-center justify-center hover:border-[#C75B00] transition">
+                        <i class="fas fa-chevron-right text-[#FE7303]"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div id="servicesContainer" class="flex overflow-x-auto space-x-6 scroll-smooth no-scrollbar">
+
+                <a href="physiotherapy.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover object-top scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Physiotherapy placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Physiotherapy</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="occupational-therapy.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover object-center scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Occupational Therapy placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Occupational Therapy</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="speech-therapy.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Speech and Language Therapy placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Speech & Language</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="special-education.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Special Education placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Special Education</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="hearing-aids.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Hearing Aids placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Hearing Aids</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="nutrition.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Nutrition placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Nutrition</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="audiology.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Audiology placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Audiology</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="psychotherapy-counselling.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Psychotherapy and Counselling placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Psychotherapy & Counselling</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="home-program.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Home Program placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Home Program</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="sessions.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Online and Offline Sessions placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Online & Offline Sessions</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
+                <a href="group-individual-sessions.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+                    <img src=""
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Group and Individualised Sessions placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Group & Individual Sessions</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+            </div>
+
+
+            <div
+                class="flex items-center mt-4 w-full gap-3 flex-shrink-0 order-3 md:order-none w-full md:w-auto justify-between md:justify-end md:hidden">
+
+                <a href="#services"
+                    class="bg-[#FE7303] hover:bg-[#C75B00] text-white px-6 py-3 rounded-full font-semibold transition flex items-center gap-2">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <div class="flex gap-3">
+
+                    <button id="prevServiceBtnMobile"
+                        class="w-12 h-12 border-2 border-[#FE7303] rounded-full flex items-center justify-center hover:border-[#C75B00] transition">
+                        <i class="fas fa-chevron-left text-[#FE7303]"></i>
+                    </button>
+
+                    <button id="nextServiceBtnMobile"
+                        class="w-12 h-12 border-2 border-[#FE7303] rounded-full flex items-center justify-center hover:border-[#C75B00] transition">
+                        <i class="fas fa-chevron-right text-[#FE7303]"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Process Section -->
+    <section class="py-20 bg-dark-blue text-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Our Treatment Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div
+                    class="text-center p-6 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale">
+                    <div class="text-5xl font-bold text-accent mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-3">Assessment</h3>
+                    <p class="text-light text-opacity-90">Comprehensive evaluation of your condition, medical history,
+                        and functional limitations to understand your unique needs.</p>
+                </div>
+
+                <div class="text-center p-6 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.2s;">
+                    <div class="text-5xl font-bold text-gold-yellow mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-3">Planning</h3>
+                    <p class="text-light text-opacity-90">Development of a personalized treatment plan with realistic
+                        goals and a clear roadmap to recovery.</p>
+                </div>
+
+                <div class="text-center p-6 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.4s;">
+                    <div class="text-5xl font-bold text-accent mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-3">Treatment</h3>
+                    <p class="text-light text-opacity-90">Implementation of evidence-based therapies with regular
+                        progress monitoring and plan adjustments as needed.</p>
+                </div>
+
+                <div class="text-center p-6 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.6s;">
+                    <div class="text-5xl font-bold text-gold-yellow mb-4">4</div>
+                    <h3 class="text-xl font-bold mb-3">Recovery</h3>
+                    <p class="text-light text-opacity-90">Achievement of functional goals with maintenance programs and
+                        home exercise support for long-term wellness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Team Section -->
+    <section id="team" class="py-20 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-dark-blue text-center mb-4">Our Expert Team</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">Meet our highly qualified and compassionate healthcare
+                professionals</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="text-center p-6 bg-accent bg-opacity-5 rounded-xl hover:scale-105 transition duration-500 animate-scale">
+                    <div class="w-40 h-40 bg-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user-md text-6xl text-light"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-2">Dr. Priya Sharma</h3>
+                    <p class="text-sm text-accent font-semibold mb-2">Chief Physiotherapist</p>
+                    <p class="text-gray-600 text-sm">BPT, MPT (Orthopedic). 12+ years of experience in sports and
+                        orthopedic rehabilitation.</p>
+                </div>
+
+                <div class="text-center p-6 bg-gold bg-opacity-5 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.2s;">
+                    <div class="w-40 h-40 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user-nurse text-6xl text-light"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-2">Rajesh Kumar</h3>
+                    <p class="text-sm text-gold-yellow font-semibold mb-2">Occupational Therapist</p>
+                    <p class="text-gray-600 text-sm">OTR/L, MS OT. Specialist in stroke rehabilitation and ADL training.
+                        10+ years experience.</p>
+                </div>
+
+                <div class="text-center p-6 bg-accent bg-opacity-5 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.4s;">
+                    <div class="w-40 h-40 bg-dark-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-light"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-2">Dr. Anjali Verma</h3>
+                    <p class="text-sm text-accent font-semibold mb-2">Speech Pathologist</p>
+                    <p class="text-gray-600 text-sm">MA Speech, Ph.D. Communication. Expert in dysphagia and
+                        neurological speech disorders.</p>
+                </div>
+
+                <div class="text-center p-6 bg-gold bg-opacity-5 rounded-xl hover:scale-105 transition duration-500 animate-scale"
+                    style="animation-delay: 0.6s;">
+                    <div class="w-40 h-40 bg-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-6xl text-light"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-2">Dr. Vikram Patel</h3>
+                    <p class="text-sm text-gold-yellow font-semibold mb-2">Rehabilitation Doctor</p>
+                    <p class="text-gray-600 text-sm">MD, DM Rehabilitation Medicine. Medical oversight and complex case
+                        management specialist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="py-20 bg-dark-blue text-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-dark-blue text-center mb-16">Our State-of-the-Art Facilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up">
+                    <div class="w-full h-48 bg-accent rounded-lg mb-4 flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-5xl text-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Modern Gym</h3>
+                    <p class="text-light text-opacity-90">Fully equipped with latest rehabilitation equipment including
+                        therapeutic beds, exercise machines, and resistance training tools.</p>
+                </div>
+
+                <div class="p-8 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
+                    style="animation-delay: 0.2s;">
+                    <div class="w-full h-48 bg-gold rounded-lg mb-4 flex items-center justify-center">
+                        <i class="fas fa-water text-5xl text-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Hydrotherapy Pool</h3>
+                    <p class="text-light text-opacity-90">Temperature-controlled therapeutic pool for aquatic therapy,
+                        improving mobility and reducing pain through water-based exercises.</p>
+                </div>
+
+                <div class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
+                    style="animation-delay: 0.4s;">
+                    <div class="w-full h-48 bg-dark-blue rounded-lg mb-4 flex items-center justify-center">
+                        <i class="fas fa-vr-cardboard text-5xl text-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Virtual Reality Lab</h3>
+                    <p class="text-light text-opacity-90">Cutting-edge VR technology for neuro-rehabilitation, enhancing
+                        engagement and accelerating recovery through immersive therapy.</p>
+                </div>
+
+                <div class="p-8 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
+                    style="animation-delay: 0.6s;">
+                    <div class="w-full h-48 bg-accent rounded-lg mb-4 flex items-center justify-center">
+                        <i class="fas fa-robot text-5xl text-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Robotic Therapy</h3>
+                    <p class="text-light text-opacity-90">Advanced robotic systems for intensive, high-repetition
+                        therapy with precision feedback and measurable progress tracking.</p>
+                </div>
+
+                <div class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
+                    style="animation-delay: 0.8s;">
+                    <div class="w-full h-48 bg-gold rounded-lg mb-4 flex items-center justify-center">
+                        <i class="fas fa-door-open text-5xl text-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">ADL Simulation Lab</h3>
+                    <p class="text-light text-opacity-90">Realistic home-like environment for training daily living
+                        activities, preparing patients for independent living.</p>
+                </div>
+
+                <div class="p-8 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
+                    style="animation-delay: 1s;">
+                    <div class="w-full h-48 bg-dark-blue rounded-lg mb-4 flex items-center justify-center">
+                        <i class="fas fa-bed text-5xl text-light"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Residential Units</h3>
+                    <p class="text-light text-opacity-90">Comfortable, modern rooms for inpatient rehabilitation with
+                        24/7 medical supervision and support staff.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-light">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-dark-blue text-center mb-16">Patient Success Stories</h2>
+
+            <div class="relative">
+                <div class="testimonials-container">
+                    <div
+                        class="testimonial-slide active p-8 bg-accent bg-opacity-10 rounded-xl text-center animate-slide-up">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 mb-6 italic">
+                            "After my stroke, I thought I'd never walk again. The team at Rehab Mantra gave me hope and
+                            through their dedicated therapy, I've regained most of my mobility. Their personalized
+                            approach and compassionate staff made all the difference in my recovery journey."
+                        </p>
+                        <p class="text-xl font-bold text-dark-blue">Ramesh Singh</p>
+                        <p class="text-accent font-semibold">Stroke Recovery Patient</p>
+                    </div>
+
+                    <div class="testimonial-slide hidden p-8 bg-gold bg-opacity-10 rounded-xl text-center">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 mb-6 italic">
+                            "My daughter's development improved dramatically after six months of therapy. The team's
+                            expertise with pediatric cases and their ability to make therapy fun made her look forward
+                            to every session. Truly grateful!"
+                        </p>
+                        <p class="text-xl font-bold text-dark-blue">Meera Gupta</p>
+                        <p class="text-gold-yellow font-semibold">Parent of Pediatric Patient</p>
+                    </div>
+
+                    <div class="testimonial-slide hidden p-8 bg-accent bg-opacity-10 rounded-xl text-center">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 mb-6 italic">
+                            "After my knee surgery, I was worried about getting back to my sports. The sports-specific
+                            rehabilitation program at Rehab Mantra was exactly what I needed. I'm back playing tennis
+                            within four months!"
+                        </p>
+                        <p class="text-xl font-bold text-dark-blue">Arjun Desai</p>
+                        <p class="text-accent font-semibold">Sports Injury Recovery Patient</p>
+                    </div>
+
+                    <div class="testimonial-slide hidden p-8 bg-gold bg-opacity-10 rounded-xl text-center">
+                        <div class="flex justify-center gap-1 mb-4">
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                            <i class="fas fa-star text-gold-yellow"></i>
+                        </div>
+                        <p class="text-lg text-gray-600 mb-6 italic">
+                            "As a senior, I was afraid of falling and losing independence. The balance training and fall
+                            prevention program here restored my confidence. I'm now able to live independently with
+                            peace of mind."
+                        </p>
+                        <p class="text-xl font-bold text-dark-blue">Sunita Iyer</p>
+                        <p class="text-gold-yellow font-semibold">Geriatric Rehabilitation Patient</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-4 mt-8">
+                    <button id="prevTestimonial"
+                        class="button-ripple bg-accent text-light px-6 py-2 rounded-lg font-semibold hover:scale-105 transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="nextTestimonial"
+                        class="button-ripple bg-accent text-light px-6 py-2 rounded-lg font-semibold hover:scale-105 transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-dark-blue text-center mb-4">Get In Touch</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">Ready to start your recovery journey? Contact us today
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-8 animate-slide-left">
+                    <div class="flex gap-6">
+                        <div class="w-16 h-16 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-2xl text-light"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Address</h3>
+                            <p class="text-gray-600">Rehab Mantra Center<br>123 Medical District, Wellness Avenue<br>New
+                                Delhi, India - 110001</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="w-16 h-16 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-2xl text-light"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Phone</h3>
+                            <p class="text-gray-600">+91-11-4567-8900<br>+91-98765-43210</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="w-16 h-16 bg-dark-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-2xl text-light"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Email</h3>
+                            <p class="text-gray-600">info@rehabmantra.com<br>appointments@rehabmantra.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="w-16 h-16 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-2xl text-light"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Hours</h3>
+                            <p class="text-gray-600">Monday - Friday: 8:00 AM - 8:00 PM<br>Saturday: 9:00 AM - 5:00
+                                PM<br>Sunday: 10:00 AM - 3:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-4 animate-slide-right" onsubmit="handleFormSubmit(event)">
+                    <input type="text" placeholder="Full Name" required
+                        class="w-full px-4 py-3 border-2 border-dark-blue rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition"
+                        id="fullName">
+
+                    <input type="email" placeholder="Email Address" required
+                        class="w-full px-4 py-3 border-2 border-dark-blue rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition"
+                        id="email">
+
+                    <input type="tel" placeholder="Phone Number" required
+                        class="w-full px-4 py-3 border-2 border-dark-blue rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition"
+                        id="phone">
+
+                    <select
+                        class="w-full px-4 py-3 border-2 border-dark-blue rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition"
+                        id="service" required>
+                        <option value="">Select Service</option>
+                        <option value="physiotherapy">Physical Therapy</option>
+                        <option value="occupational">Occupational Therapy</option>
+                        <option value="speech">Speech Therapy</option>
+                        <option value="neurological">Neurological Rehabilitation</option>
+                        <option value="pediatric">Pediatric Rehabilitation</option>
+                        <option value="geriatric">Geriatric Rehabilitation</option>
+                    </select>
+
+                    <textarea placeholder="Message" rows="5" required
+                        class="w-full px-4 py-3 border-2 border-dark-blue rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition"
+                        id="message"></textarea>
+
+                    <button type="submit"
+                        class="button-ripple w-full bg-accent text-light px-6 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition">Send
+                        Message</button>
+                    <p id="formMessage" class="text-center text-sm"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-dark-blue text-light">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-dark-blue">Ready to Begin Your Recovery?</h2>
+            <p class="text-xl text-gray-700 text-opacity-90 mb-8">
+                Don't let pain or disability hold you back. Our compassionate team is ready to help you regain your
+                independence and improve your quality of life.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                    class="button-ripple bg-accent text-light px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition animate-pulse-ring">
+                    Book Appointment Now
+                </button>
+                <button
+                    class="button-ripple border-2 border-light text-gray-700 px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition">
+                    Request Callback
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-[#0B4799] pb-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="text-center w-full flex flex-col items-center">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="images/logo.png" alt="Rehab Mantra Logo"
+                            class="w-32 h-32 rounded-full object-cover shadow-md">
+                    </div>
+
+                    <p class="text-gray-600 text-opacity-70">Leading rehabilitation center dedicated to restoring health
+                        and independence.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-600 text-opacity-70 text-sm">
+                        <li><a href="#home" class="hover:text-accent transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-accent transition">Services</a></li>
+                        <li><a href="#team" class="hover:text-accent transition">Team</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-600 text-opacity-70 text-sm">
+                        <li><a href="#" class="hover:text-accent transition">Physical Therapy</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Occupational Therapy</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Speech Therapy</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Pediatric Care</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-light border-opacity-10 pt-8 text-center text-light text-opacity-70 text-sm">
+                <p>&copy; 2025 Rehab Mantra. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+    <script>
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Scroll Animations
+        gsap.utils.toArray('.animate-slide-up, .animate-slide-left, .animate-slide-right, .animate-scale').forEach(element => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                duration: 0.8,
+                ease: 'power2.out'
+            });
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger counters on scroll
+        ScrollTrigger.create({
+            trigger: '.counter',
+            onEnter: animateCounters,
+            once: true
+        });
+
+        // Testimonials Slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+
+        function showTestimonial(n) {
+            testimonials.forEach(slide => slide.classList.add('hidden'));
+            testimonials[n].classList.remove('hidden');
+            gsap.to(testimonials[n], { duration: 0.6, opacity: 1 });
+        }
+
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 6000);
+
+        // Form Submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            const formMessage = document.getElementById('formMessage');
+
+            if (fullName && email && phone && service && message) {
+                formMessage.textContent = '✓ Message sent successfully! We will contact you soon.';
+                formMessage.style.color = '#0B4799';
+
+                document.querySelector('form').reset();
+
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                }, 5000);
+            } else {
+                formMessage.textContent = '✗ Please fill all fields';
+                formMessage.style.color = '#FE7303';
+            }
+        }
+
+        // Scroll to Top Button
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 300) {
+                if (!document.getElementById('scrollTopBtn')) {
+                    const btn = document.createElement('button');
+                    btn.id = 'scrollTopBtn';
+                    btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+                    btn.className = 'fixed bottom-8 right-8 w-12 h-12 bg-accent text-light rounded-full flex items-center justify-center button-ripple hover:scale-110 transition shadow-lg z-40';
+                    document.body.appendChild(btn);
+
+                    btn.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            }
+        });
+
+        // Initialize GSAP animations on load
+        window.addEventListener('load', () => {
+            gsap.fromTo('.hero-blob',
+                { x: -100, y: -100, opacity: 0 },
+                { x: 0, y: 0, opacity: 0.15, duration: 1, delay: 0.2 }
+            );
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('servicesContainer');
+            const nextBtns = [
+                document.getElementById('nextServiceBtn'),
+                document.getElementById('nextServiceBtnMobile')
+            ].filter(Boolean);
+            const prevBtns = [
+                document.getElementById('prevServiceBtn'),
+                document.getElementById('prevServiceBtnMobile')
+            ].filter(Boolean);
+
+            if (!container) return;
+
+            const scrollContainer = (direction) => {
+                const currentScroll = container.scrollLeft;
+                const firstCard = container.querySelector('.flex-shrink-0.w-72');
+                let targetScroll = 0;
+
+                if (firstCard) {
+                    const cardWidth = firstCard.offsetWidth;
+                    const gap = 24;
+                    const step = cardWidth + gap;
+                    targetScroll = currentScroll + (direction === 'next' ? step : -step);
+                } else {
+                    const scrollAmount = 300;
+                    targetScroll = currentScroll + (direction === 'next' ? scrollAmount : -scrollAmount);
+                }
+
+                if (targetScroll < 0) {
+                    targetScroll = 0;
+                } else if (targetScroll > container.scrollWidth - container.clientWidth) {
+                    targetScroll = container.scrollWidth - container.clientWidth;
+                }
+
+                container.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+            };
+
+            // Add event listeners for Next buttons
+            nextBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    scrollContainer('next');
+                });
+            });
+
+            // Add event listeners for Previous buttons
+            prevBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    scrollContainer('prev');
+                });
+            });
+        });
+
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 2000, // 2 seconds
+                disableOnInteraction: false,
+            },
+            effect: "slide",
+            speed: 700, // animation speed
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>
