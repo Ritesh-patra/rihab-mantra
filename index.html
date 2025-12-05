@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -306,9 +306,9 @@
                 <a href="#why-choose" class="text-dark-blue hover:text-accent-orange transition">Why Us</a>
                 <a href="#team" class="text-dark-blue hover:text-accent-orange transition">Team</a>
                 <a href="#contact" class="text-dark-blue hover:text-accent-orange transition">Contact</a>
-                <button
+                <a href="#appointment"
                     class="button-ripple bg-accent text-light px-6 py-2 rounded-lg font-semibold hover:scale-105 transition">Book
-                    Now</button>
+                    Now</a>
             </div>
             <button class="md:hidden text-dark-blue" id="mobileMenuBtn">
                 <i class="fas fa-bars text-2xl"></i>
@@ -325,7 +325,7 @@
             <a href="#why-choose" class="text-dark-blue hover:text-accent-orange transition">Why Us</a>
             <a href="#team" class="text-dark-blue hover:text-accent-orange transition">Team</a>
             <a href="#contact" class="text-dark-blue hover:text-accent-orange transition">Contact</a>
-            <button class="button-ripple bg-accent text-light px-6 py-2 rounded-lg font-semibold">Book Now</button>
+            <a href="#appointment" class="button-ripple bg-accent text-light px-6 py-2 rounded-lg font-semibold">Book Now</a>
         </div>
     </div>
 
@@ -384,7 +384,7 @@
 
                             <!-- Slide 2 -->
                             <div class="swiper-slide">
-                                <img src="images/landing2.jpg" class="w-full h-full object-cover" alt="">
+                                <img src="images/landing2.png" class="w-full h-full object-cover" alt="">
                             </div>
 
                             <!-- Slide 3 -->
@@ -396,6 +396,19 @@
                             <div class="swiper-slide">
                                 <img src="images/landing4.jpg" class="w-full h-full object-cover" alt="">
                             </div>
+
+                            <!-- Slide 5 -->
+                            <div class="swiper-slide">
+                                <img src="images/landing5.png" class="w-full h-full object-cover" alt="">
+                            </div>
+
+                            <!-- Slide 6 -->
+                            <div class="swiper-slide">
+                                <img src="images/landing6.jpg" class="w-full h-full object-cover" alt="">
+                            </div>
+
+
+
                         </div>
 
                         <!-- Pagination Dots -->
@@ -413,10 +426,7 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 animate-slide-left">
-                    <div
-                        class="h-96 bg-gold rounded-2xl flex items-center justify-center shadow-lg hover:scale-105 transition duration-500">
-                        <i class="fas fa-hospital-user text-6xl text-light animate-float"></i>
-                    </div>
+                    <img class="w-full h-full object-cover" src="images/rehab mantra infographic-01.png" alt="">
 
                 </div>
 
@@ -461,81 +471,114 @@
         </div>
     </section>
 
+    <section id="core-philosophy" class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
-    <section id="vision-mission-colored" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">
-
-            <div class="text-center mb-12 lg:mb-16">
-                <h2
-                    class="text-4xl font-extrabold text-gray-900 sm:text-5xl border-b-4 border-orange-500 inline-block pb-1">
-                    Our Core Philosophy
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-extrabold text-blue-900 leading-tight">
+                    Our Core Philosophy in Action
                 </h2>
-                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-                    Guiding our practice with a commitment to complete, lasting, and holistic recovery.
+                <p class="mt-4 text-xl text-gray-600 max-w-4xl mx-auto">
+                    Our commitment to holistic health is defined by our Vision, driven by our Mission, and measured by
+                    our Operational Objectives.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-
                 <div
                     class="p-8 bg-white rounded-2xl shadow-xl border-t-4 border-blue-600 transition duration-500 hover:shadow-2xl">
-                    <div class="flex items-start mb-4">
-                        <i class="fas fa-eye text-3xl text-orange-500 mr-4 mt-1 flex-shrink-0"></i>
-                        <h3 class="text-3xl font-bold text-blue-900">
-                            Our Vision: Holistic Healing
-                        </h3>
+                    <div class="flex items-start mb-4"> <i
+                            class="fas fa-eye text-3xl text-orange-500 mr-4 mt-1 flex-shrink-0"></i>
+                        <h3 class="text-3xl font-bold text-blue-900"> Our Vision: Holistic Healing </h3>
                     </div>
-
-                    <p class="text-lg text-gray-700 leading-relaxed italic">
-                        "To establish a center of holistic healing where multidisciplinary teamwork, community
-                        awareness, and core wellness come together to achieve complete and lasting recovery."
-                    </p>
-
+                    <p class="text-lg text-gray-700 leading-relaxed italic"> "To establish a center of holistic healing
+                        where multidisciplinary teamwork, community awareness, and core wellness come together to
+                        achieve complete and lasting recovery." </p>
                     <ul class="mt-6 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-orange-500 mr-2 mt-0.5"><i class="fas fa-star"></i></span>
-                            Multidisciplinary Teamwork: Integrated expertise for comprehensive care.
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-500 mr-2 mt-0.5"><i class="fas fa-star"></i></span>
-                            Community Awareness: Fostering a supportive network for healing.
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange-500 mr-2 mt-0.5"><i class="fas fa-star"></i></span>
-                            Core Wellness: Focusing on intrinsic health for long-term results.
-                        </li>
+                        <li class="flex items-start"> <span class="text-orange-500 mr-2 mt-0.5"><i
+                                    class="fas fa-star"></i></span> Multidisciplinary Teamwork: Integrated expertise for
+                            comprehensive care. </li>
+                        <li class="flex items-start"> <span class="text-orange-500 mr-2 mt-0.5"><i
+                                    class="fas fa-star"></i></span> Community Awareness: Fostering a supportive network
+                            for healing. </li>
+                        <li class="flex items-start"> <span class="text-orange-500 mr-2 mt-0.5"><i
+                                    class="fas fa-star"></i></span> Core Wellness: Focusing on intrinsic health for
+                            long-term results. </li>
                     </ul>
                 </div>
-
                 <div
                     class="p-8 bg-white rounded-2xl shadow-xl border-t-4 border-orange-600 transition duration-500 hover:shadow-2xl">
-                    <div class="flex items-start mb-4">
-                        <i class="fas fa-bullseye text-3xl text-blue-600 mr-4 mt-1 flex-shrink-0"></i>
-                        <h3 class="text-3xl font-bold text-blue-900">
-                            Our Mission: Integrated Delivery
-                        </h3>
+                    <div class="flex items-start mb-4"> <i
+                            class="fas fa-bullseye text-3xl text-blue-600 mr-4 mt-1 flex-shrink-0"></i>
+                        <h3 class="text-3xl font-bold text-blue-900"> Our Mission: Integrated Delivery </h3>
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed italic"> "To deliver holistic rehabilitation through
+                        integrated multidisciplinary therapies that address physical dysfunction, psychosomatic pain,
+                        and emotional health, with a strong focus on prevention, education, and long-term wellness."
+                    </p>
+                    <ul class="mt-6 space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start"> <span class="text-blue-500 mr-2 mt-0.5"><i
+                                    class="fas fa-hand-holding-heart"></i></span> Integrated Therapies: Addressing
+                            physical, pain, and emotional factors. </li>
+                        <li class="flex items-start"> <span class="text-blue-500 mr-2 mt-0.5"><i
+                                    class="fas fa-hand-holding-heart"></i></span> Prevention & Education: Empowering
+                            clients against relapse. </li>
+                        <li class="flex items-start"> <span class="text-blue-500 mr-2 mt-0.5"><i
+                                    class="fas fa-hand-holding-heart"></i></span> Long-term Wellness: Strategies for
+                            sustained, improved quality of life. </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-t-2 border-orange-200 w-1/3 mx-auto mb-16" />
+
+            <div>
+                <h2 class="text-3xl font-extrabold text-blue-900 text-center mb-10 uppercase tracking-wider">
+                    Our 5 Operational Objectives
+                </h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+                    <div
+                        class="group flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-orange-500 transition-all duration-300 hover:shadow-xl h-full">
+                        <i
+                            class="fas fa-handshake text-3xl text-orange-600 mb-2 group-hover:scale-110 transition duration-300"></i>
+                        <p class="font-extrabold text-lg text-blue-900 leading-snug">1. Holistic Care</p>
+                        <p class="text-xs text-gray-600 mt-1">Seamlessly blending therapies.</p>
                     </div>
 
-                    <p class="text-lg text-gray-700 leading-relaxed italic">
-                        "To deliver holistic rehabilitation through integrated multidisciplinary therapies that address
-                        physical dysfunction, psychosomatic pain, and emotional health, with a strong focus on
-                        prevention, education, and long-term wellness."
-                    </p>
+                    <div
+                        class="group flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 transition-all duration-300 hover:shadow-xl h-full">
+                        <i
+                            class="fas fa-microscope text-3xl text-blue-600 mb-2 group-hover:scale-110 transition duration-300"></i>
+                        <p class="font-extrabold text-lg text-blue-900 leading-snug">2. Evidence-Based</p>
+                        <p class="text-xs text-gray-600 mt-1">Tailored plans backed by research.</p>
+                    </div>
 
-                    <ul class="mt-6 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2 mt-0.5"><i class="fas fa-hand-holding-heart"></i></span>
-                            Integrated Therapies: Addressing physical, pain, and emotional factors.
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2 mt-0.5"><i class="fas fa-hand-holding-heart"></i></span>
-                            Prevention & Education: Empowering clients against relapse.
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2 mt-0.5"><i class="fas fa-hand-holding-heart"></i></span>
-                            Long-term Wellness: Strategies for sustained, improved quality of life.
-                        </li>
-                    </ul>
+                    <div
+                        class="group flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-orange-500 transition-all duration-300 hover:shadow-xl h-full">
+                        <i
+                            class="fas fa-graduation-cap text-3xl text-orange-600 mb-2 group-hover:scale-110 transition duration-300"></i>
+                        <p class="font-extrabold text-lg text-blue-900 leading-snug">3. Patient Empowerment</p>
+                        <p class="text-xs text-gray-600 mt-1">Tools for long-term self-management.</p>
+                    </div>
+
+                    <div
+                        class="group flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 transition-all duration-300 hover:shadow-xl h-full">
+                        <i
+                            class="fas fa-globe-americas text-3xl text-blue-600 mb-2 group-hover:scale-110 transition duration-300"></i>
+                        <p class="font-extrabold text-lg text-blue-900 leading-snug">4. Community Resource</p>
+                        <p class="text-xs text-gray-600 mt-1">Promoting wellness and prevention.</p>
+                    </div>
+
+                    <div
+                        class="group flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-orange-500 transition-all duration-300 hover:shadow-xl h-full">
+                        <i
+                            class="fas fa-users text-3xl text-orange-600 mb-2 group-hover:scale-110 transition duration-300"></i>
+                        <p class="font-extrabold text-lg text-blue-900 leading-snug">5. Team Collaboration</p>
+                        <p class="text-xs text-gray-600 mt-1">Seamless continuity across all therapies.</p>
+                    </div>
+
                 </div>
 
             </div>
@@ -724,6 +767,25 @@
                     </div>
                 </a>
 
+                <a href="visual-therapy.html"
+                    class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
+
+                    <img src="https://i.pinimg.com/1200x/a7/16/85/a71685cd00934d6b3c5df17da28484bc.jpg"
+                        class="w-full h-full object-cover scale-[1.2] transition duration-300 group-hover:scale-[1.1] bg-gray-200"
+                        alt="Visual Therapy placeholder image">
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition">
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-bold">Vision Therapy</h3>
+                        <button class="bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                            <i class="fas fa-arrow-right text-[#0B4799]"></i>
+                        </button>
+                    </div>
+                </a>
+
 
                 <a href="nutrion.html"
                     class="group relative flex-shrink-0 w-72 overflow-hidden rounded-3xl h-80 shadow-lg hover:shadow-2xl transition duration-300 border-2 border-transparent hover:border-[#FE7303]">
@@ -895,7 +957,8 @@
                     </div>
 
                     <p class="text-base text-gray-600 mb-4">
-                        A 45–60 minute session where we explain the necessary steps, the reasons behind them, and which
+                        A single 45–60 minute session where we assess and explain the condition, the reasons behind
+                        them, and which
                         therapy is the best fit for your specific condition.
                     </p>
 
@@ -950,7 +1013,7 @@
                     </div>
 
                     <p class="text-base text-gray-600 mb-4">
-                        Three structured activity sections based on your needs — clearly explained and demonstrated so
+                        Three structured activity sessions based on your needs — clearly explained and demonstrated so
                         you can follow confidently as part of your recovery.
                     </p>
 
@@ -1047,7 +1110,6 @@
 
             <div
                 class="bg-[#FFB71B] p-6 md:p-10 rounded-xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-
                 <h3 class="text-xl md:text-3xl font-bold text-[#0B4799] text-center md:text-left leading-snug">
                     Call for a free over the phone needs assessment
                 </h3>
@@ -1056,9 +1118,7 @@
                     class="bg-white text-[#0B4799] px-6 py-3 md:px-10 md:py-4 rounded-full font-extrabold text-2xl md:text-3xl shadow-lg hover:bg-gray-50 transition flex-shrink-0">
                     +91 7900440058
                 </a>
-
             </div>
-
         </div>
     </section>
 
@@ -1106,7 +1166,7 @@
     <!-- Expert Team Section -->
     <section id="team" class="py-10 bg-light">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-dark-blue text-center mb-4">Our Expert Team</h2>
+            <h2 class="text-4xl font-bold text-[#0B4799] text-center mb-4">Our Expert Team</h2>
             <p class="text-center text-gray-600 mb-12 text-lg">Meet our highly qualified and compassionate healthcare
                 professionals</p>
 
@@ -1114,15 +1174,28 @@
             <div class="swiper myTeamSwiper">
                 <div class="swiper-wrapper">
 
+                    <!-- Member 0 -->
+                    <div class="swiper-slide">
+                        <div
+                            class="text-center p-6 bg-gradient-to-br from-[#0B4799] to-[#FE7303] rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                            <div
+                                class="w-40 h-40 bg-white rounded-full mx-auto mb-4 flex items-center justify-center ring-4 ring-white shadow-inner transition duration-300 hover:ring-offset-4 hover:ring-offset-[#FE7303]">
+                                <i class="fas fa-user-md text-6xl text-[#0B4799]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Swati Dash</h3>
+                            <p class="text-sm text-white font-semibold">Director</p>
+                        </div>
+                    </div>
+
+
                     <!-- Member 1 -->
                     <div class="swiper-slide">
                         <div class="text-center p-6 bg-accent bg-opacity-5 rounded-xl">
                             <div class="w-40 h-40 bg-accent rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <i class="fas fa-user-md text-6xl text-light"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-dark-blue mb-2">Dr. Priya Sharma</h3>
-                            <p class="text-sm text-accent font-semibold mb-2">Chief Physiotherapist</p>
-                            <p class="text-gray-600 text-sm">BPT, MPT (Orthopedic). 12+ years experience.</p>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Deepti Rani Das</h3>
+                            <p class="text-sm text-accent font-semibold">Special Education</p>
                         </div>
                     </div>
 
@@ -1130,11 +1203,10 @@
                     <div class="swiper-slide">
                         <div class="text-center p-6 bg-gold bg-opacity-5 rounded-xl">
                             <div class="w-40 h-40 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-user-nurse text-6xl text-light"></i>
+                                <i class="fas fa-user text-6xl text-light"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-dark-blue mb-2">Rajesh Kumar</h3>
-                            <p class="text-sm text-gold-yellow font-semibold mb-2">Occupational Therapist</p>
-                            <p class="text-gray-600 text-sm">Stroke rehab specialist with 10+ yrs experience.</p>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Tejaswini Sahu</h3>
+                            <p class="text-sm text-gold-yellow font-semibold">Special Education</p>
                         </div>
                     </div>
 
@@ -1145,9 +1217,21 @@
                                 class="w-40 h-40 bg-dark-blue rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <i class="fas fa-user text-6xl text-light"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-dark-blue mb-2">Dr. Anjali Verma</h3>
-                            <p class="text-sm text-accent font-semibold mb-2">Speech Pathologist</p>
-                            <p class="text-gray-600 text-sm">Specialist in neurological speech disorders.</p>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Krishna Rani Patra</h3>
+                            <p class="text-sm text-accent font-semibold">Occupational Therapy</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 0 -->
+                    <div class="swiper-slide">
+                        <div
+                            class="text-center p-6 bg-gradient-to-br from-[#0B4799] to-[#FE7303] rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                            <div
+                                class="w-40 h-40 bg-white rounded-full mx-auto mb-4 flex items-center justify-center ring-4 ring-white shadow-inner transition duration-300 hover:ring-offset-4 hover:ring-offset-[#FE7303]">
+                                <i class="fas fa-user-md text-6xl text-[#0B4799]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Swati Dash</h3>
+                            <p class="text-sm text-white font-semibold">Director</p>
                         </div>
                     </div>
 
@@ -1155,81 +1239,181 @@
                     <div class="swiper-slide">
                         <div class="text-center p-6 bg-gold bg-opacity-5 rounded-xl">
                             <div class="w-40 h-40 bg-accent rounded-full mx-auto mb-4 flex items-center justify-center">
-                                <i class="fas fa-heartbeat text-6xl text-light"></i>
+                                <i class="fas fa-user text-6xl text-light"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-dark-blue mb-2">Dr. Vikram Patel</h3>
-                            <p class="text-sm text-gold-yellow font-semibold mb-2">Rehabilitation Doctor</p>
-                            <p class="text-gray-600 text-sm">Complex case management specialist.</p>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Madhusmita Behera</h3>
+                            <p class="text-sm text-gold-yellow font-semibold">Occupational Therapy</p>
                         </div>
                     </div>
 
-                    <!-- 🚀 Add your remaining 8 members here (same structure) -->
+                    <!-- Member 5 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-accent bg-opacity-5 rounded-xl">
+                            <div
+                                class="w-40 h-40 bg-dark-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Priyanka Behera</h3>
+                            <p class="text-sm text-accent font-semibold">Speech & Language Therapy</p>
+                        </div>
+                    </div>
 
+                    <!-- Member 6 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-gold bg-opacity-5 rounded-xl">
+                            <div class="w-40 h-40 bg-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Pramodini Nahak</h3>
+                            <p class="text-sm text-gold-yellow font-semibold">Speech & Language Therapy</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 0 -->
+                    <div class="swiper-slide">
+                        <div
+                            class="text-center p-6 bg-gradient-to-br from-[#0B4799] to-[#FE7303] rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                            <div
+                                class="w-40 h-40 bg-white rounded-full mx-auto mb-4 flex items-center justify-center ring-4 ring-white shadow-inner transition duration-300 hover:ring-offset-4 hover:ring-offset-[#FE7303]">
+                                <i class="fas fa-user-md text-6xl text-[#0B4799]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Swati Dash</h3>
+                            <p class="text-sm text-white font-semibold">Director</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 7 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-accent bg-opacity-5 rounded-xl">
+                            <div
+                                class="w-40 h-40 bg-dark-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Soumya Senapati</h3>
+                            <p class="text-sm text-accent font-semibold">Human Resources Manager</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 8 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-gold bg-opacity-5 rounded-xl">
+                            <div class="w-40 h-40 bg-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Anchal S Barik</h3>
+                            <p class="text-sm text-gold-yellow font-semibold">Physiotherapy</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 9 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-accent bg-opacity-5 rounded-xl">
+                            <div
+                                class="w-40 h-40 bg-dark-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Shubhashree Acharjya</h3>
+                            <p class="text-sm text-accent font-semibold">Physiotherapy</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 10 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-gold bg-opacity-5 rounded-xl">
+                            <div class="w-40 h-40 bg-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Swati Pallavi</h3>
+                            <p class="text-sm text-gold-yellow font-semibold">Audiologist Department</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 11 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-accent bg-opacity-5 rounded-xl">
+                            <div
+                                class="w-40 h-40 bg-dark-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Roma</h3>
+                            <p class="text-sm text-accent font-semibold">Psychotherapist</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 12 -->
+                    <div class="swiper-slide">
+                        <div class="text-center p-6 bg-accent bg-opacity-5 rounded-xl">
+                            <div
+                                class="w-40 h-40 bg-dark-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-light"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0B4799] mb-2">Sai Prasanthi</h3>
+                            <p class="text-sm text-accent font-semibold">Nutritionist</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <!-- Facilities Section -->
-    <section class="py-20 bg-dark-blue text-light">
+    <!-- Facilities Section -->
+    <section class="py-5 bg-dark-blue text-light">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-dark-blue text-center mb-16">Our State-of-the-Art Facilities</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div
-                    class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up">
-                    <div class="w-full h-48 bg-accent rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-dumbbell text-5xl text-light"></i>
+
+                <!-- 1 -->
+                <div class="bg-[#0B4799]  rounded-xl hover:scale-105 transition duration-500 animate-slide-up">
+                    <div class="w-full h-48 rounded-t-xl overflow-hidden">
+                        <img src="https://i.pinimg.com/1200x/90/76/8c/90768c4b2b47a198372f731bd1043621.jpg"
+                            class="w-full h-full object-cover" alt="Physiotherapy Equipment">
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Advance Physiotherapy equipment</h3>
-                    <p class="text-light text-opacity-90">Fully equipped with latest rehabilitation equipment including
-                        therapeutic beds, exercise machines, and resistance training tools.</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">Advance Physiotherapy Equipment</h3>
+                        <p class="text-light text-opacity-90">Fully equipped with latest rehabilitation equipment
+                            including therapeutic beds, exercise machines, and resistance tools.</p>
+                    </div>
                 </div>
 
-
-
-                <div class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
+                <!-- 2 -->
+                <div class="bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
                     style="animation-delay: 0.4s;">
-                    <div class="w-full h-48 bg-dark-blue rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-vr-cardboard text-5xl text-light"></i>
+                    <div class="w-full h-48 rounded-t-xl overflow-hidden">
+                        <img src="https://i.pinimg.com/1200x/7e/00/71/7e007195646508bc7f387c021d5eff84.jpg"
+                            class="w-full h-full object-cover" alt="VR Lab">
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Virtual Reality Lab</h3>
-                    <p class="text-light text-opacity-90">Cutting-edge VR technology for neuro-rehabilitation, enhancing
-                        engagement and accelerating recovery through immersive therapy.</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">Virtual Reality Lab</h3>
+                        <p class="text-light text-opacity-90">Cutting-edge VR technology for neuro-rehabilitation,
+                            enhancing engagement and accelerating recovery through immersive therapy.</p>
+                    </div>
                 </div>
 
-                <div class="p-8 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
+                <!-- 3 - Hearing Aid Programming -->
+                <div class="bg-[#0B4799] rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
                     style="animation-delay: 0.6s;">
-                    <div class="w-full h-48 bg-accent rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-robot text-5xl text-light"></i>
+                    <div class="w-full h-48 rounded-t-xl overflow-hidden">
+                        <img src="https://i.pinimg.com/1200x/17/39/e8/1739e855473afdf5dbf429dc4fb76dcc.jpg"
+                            class="w-full h-full object-cover" alt="Hearing Aid Programming">
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Robotic Therapy</h3>
-                    <p class="text-light text-opacity-90">Advanced robotic systems for intensive, high-repetition
-                        therapy with precision feedback and measurable progress tracking.</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">Hearing Aid Programming</h3>
+                        <p class="text-light text-opacity-90">
+                            Personalized hearing aid fitting and programming using advanced digital technology to
+                            optimize sound quality, comfort, and auditory performance for individuals with hearing loss.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="p-8 bg-accent bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
-                    style="animation-delay: 0.8s;">
-                    <div class="w-full h-48 bg-gold rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-door-open text-5xl text-light"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">ADL Simulation Lab</h3>
-                    <p class="text-light text-opacity-90">Realistic home-like environment for training daily living
-                        activities, preparing patients for independent living.</p>
-                </div>
 
-                <div class="p-8 bg-gold bg-opacity-10 rounded-xl hover:scale-105 transition duration-500 animate-slide-up"
-                    style="animation-delay: 1s;">
-                    <div class="w-full h-48 bg-dark-blue rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-bed text-5xl text-light"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Residential Units</h3>
-                    <p class="text-light text-opacity-90">Comfortable, modern rooms for inpatient rehabilitation with
-                        24/7 medical supervision and support staff.</p>
-                </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Testimonials Section -->
     <section class="py-20 bg-light">
@@ -1238,6 +1422,8 @@
 
             <div class="relative">
                 <div class="testimonials-container">
+
+                    <!-- 1 -->
                     <div
                         class="testimonial-slide active p-8 bg-accent bg-opacity-10 rounded-xl text-center animate-slide-up">
                         <div class="flex justify-center gap-1 mb-4">
@@ -1248,14 +1434,16 @@
                             <i class="fas fa-star text-gold-yellow"></i>
                         </div>
                         <p class="text-lg text-gray-600 mb-6 italic">
-                            "After my stroke, I thought I'd never walk again. The team at Rehab Mantra gave me hope and
-                            through their dedicated therapy, I've regained most of my mobility. Their personalized
-                            approach and compassionate staff made all the difference in my recovery journey."
+                            "My child had delayed speech and communication issues. After regular speech therapy
+                            sessions,
+                            the improvement has been remarkable. The therapist team is extremely patient, friendly,
+                            and professional. My child enjoys coming here!"
                         </p>
-                        <p class="text-xl font-bold text-dark-blue">Ramesh Singh</p>
-                        <p class="text-accent font-semibold">Stroke Recovery Patient</p>
+                        <p class="text-xl font-bold text-dark-blue">Priyanka Nanda</p>
+                        <p class="text-accent font-semibold">Parent of Speech Therapy Patient</p>
                     </div>
 
+                    <!-- 2 -->
                     <div class="testimonial-slide hidden p-8 bg-gold bg-opacity-10 rounded-xl text-center">
                         <div class="flex justify-center gap-1 mb-4">
                             <i class="fas fa-star text-gold-yellow"></i>
@@ -1265,14 +1453,15 @@
                             <i class="fas fa-star text-gold-yellow"></i>
                         </div>
                         <p class="text-lg text-gray-600 mb-6 italic">
-                            "My daughter's development improved dramatically after six months of therapy. The team's
-                            expertise with pediatric cases and their ability to make therapy fun made her look forward
-                            to every session. Truly grateful!"
+                            "I had severe back pain due to sitting long hours at work. The personalised physiotherapy
+                            plan
+                            and exercises reduced my pain within weeks. I feel more active and energetic now."
                         </p>
-                        <p class="text-xl font-bold text-dark-blue">Meera Gupta</p>
-                        <p class="text-gold-yellow font-semibold">Parent of Pediatric Patient</p>
+                        <p class="text-xl font-bold text-dark-blue">Sanjay Kumar</p>
+                        <p class="text-gold-yellow font-semibold">Physiotherapy Patient</p>
                     </div>
 
+                    <!-- 3 -->
                     <div class="testimonial-slide hidden p-8 bg-accent bg-opacity-10 rounded-xl text-center">
                         <div class="flex justify-center gap-1 mb-4">
                             <i class="fas fa-star text-gold-yellow"></i>
@@ -1282,14 +1471,14 @@
                             <i class="fas fa-star text-gold-yellow"></i>
                         </div>
                         <p class="text-lg text-gray-600 mb-6 italic">
-                            "After my knee surgery, I was worried about getting back to my sports. The sports-specific
-                            rehabilitation program at Rehab Mantra was exactly what I needed. I'm back playing tennis
-                            within four months!"
+                            "My son was diagnosed with ADHD. The occupational therapy sessions helped him improve focus,
+                            handwriting, and overall behaviour. I can see a huge difference at home and school."
                         </p>
-                        <p class="text-xl font-bold text-dark-blue">Arjun Desai</p>
-                        <p class="text-accent font-semibold">Sports Injury Recovery Patient</p>
+                        <p class="text-xl font-bold text-dark-blue">Manisha Patro</p>
+                        <p class="text-accent font-semibold">Parent of Occupational Therapy Patient</p>
                     </div>
 
+                    <!-- 4 -->
                     <div class="testimonial-slide hidden p-8 bg-gold bg-opacity-10 rounded-xl text-center">
                         <div class="flex justify-center gap-1 mb-4">
                             <i class="fas fa-star text-gold-yellow"></i>
@@ -1299,13 +1488,14 @@
                             <i class="fas fa-star text-gold-yellow"></i>
                         </div>
                         <p class="text-lg text-gray-600 mb-6 italic">
-                            "As a senior, I was afraid of falling and losing independence. The balance training and fall
-                            prevention program here restored my confidence. I'm now able to live independently with
-                            peace of mind."
+                            "After my stroke, I lost strength on one side of my body. Regular neuro-rehabilitation
+                            sessions
+                            here helped me regain movement and confidence. I am able to walk again without support."
                         </p>
-                        <p class="text-xl font-bold text-dark-blue">Sunita Iyer</p>
-                        <p class="text-gold-yellow font-semibold">Geriatric Rehabilitation Patient</p>
+                        <p class="text-xl font-bold text-dark-blue">Gopal Behera</p>
+                        <p class="text-gold-yellow font-semibold">Neuro Rehabilitation Patient</p>
                     </div>
+
                 </div>
 
                 <div class="flex justify-center gap-4 mt-8">
@@ -1321,6 +1511,7 @@
             </div>
         </div>
     </section>
+
 
 
     <!-- Contact Section -->
@@ -1427,13 +1618,42 @@
                     class="button-ripple bg-accent text-light px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition animate-pulse-ring">
                     Book Appointment Now
                 </a>
-                <button
+                <button onclick="openPopup()"
                     class="button-ripple border-2 border-light text-gray-700 px-8 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition">
                     Request Callback
                 </button>
+
             </div>
         </div>
     </section>
+
+    <!-- Popup Background -->
+    <div id="callbackPopup"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden flex justify-center items-center z-50">
+
+        <!-- Popup Box -->
+        <div class="bg-white p-8 rounded-xl shadow-xl w-80">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Request a Callback</h2>
+
+            <div class="space-y-4">
+                <input id="cbName" type="text" placeholder="Your Name"
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500">
+
+                <input id="cbPhone" type="tel" placeholder="Phone Number"
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mt-6 flex justify-between">
+                <button onclick="closePopup()"
+                    class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Cancel</button>
+
+                <button onclick="sendToWhatsApp()"
+                    class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Send</button>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="bg-dark-blue text-[#0B4799] pb-10">
@@ -1469,18 +1689,19 @@
                 <div>
                     <h4 class="text-xl font-bold mb-4">Follow Us</h4>
                     <div class="flex gap-4">
-                        <a href="#"
+                        <a href="https://www.facebook.com/profile.php?id=61584279015597"
                             class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="#"
+                        <a href="https://www.instagram.com/rehabmantra.in/"
                             class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
                                 class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 hidden h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 hidden h-10 bg-accent rounded-full flex items-center justify-center hover:scale-110 transition"><i
+                                class="fab fa-linkedin-in"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -1599,7 +1820,7 @@
             Service: ${service}
             Message: ${message}`;
 
-            const whatsappURL = "https://wa.me/917900440058?text=" + encodeURIComponent(finalMessage);
+            const whatsappURL = "https://wa.me/919348996474?text=" + encodeURIComponent(finalMessage);
 
             window.open(whatsappURL, "_blank");
         }
@@ -1736,6 +1957,37 @@
             // WhatsApp open kare
             window.open(url, "_blank");
         });
+        const popup = document.getElementById("callbackPopup");
+
+        // Open Popup
+        function openPopup() {
+            popup.classList.remove("hidden");
+        }
+
+        // Close Popup
+        function closePopup() {
+            popup.classList.add("hidden");
+        }
+
+        // Send WhatsApp Message
+        function sendToWhatsApp() {
+            const name = document.getElementById("cbName").value;
+            const phone = document.getElementById("cbPhone").value;
+
+            if (name.trim() === "" || phone.trim() === "") {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            const number = "917900440058"; // WhatsApp Number
+            const message = `Callback Request:%0AName: ${name}%0APhone: ${phone}`;
+
+            const url = `https://api.whatsapp.com/send?phone=${number}&text=${message}`;
+
+            window.open(url, "_blank");
+
+            closePopup();
+        }
     </script>
 </body>
 
