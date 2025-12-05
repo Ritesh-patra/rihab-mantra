@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Education Services - Rehabilitation Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .booking-modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .booking-modal-content {
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="images/logo.png" alt="Rehab Mantra Logo"
+                    class="w-14 h-14 rounded-full object-cover shadow-md">
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#services" class="text-gray-700 hover:text-[#FE7303] font-medium transition">All
+                    Services</a>
+                <a href="#benefits" class="text-gray-700 hover:text-[#FE7303] font-medium transition">Benefits</a>
+                <a href="#contact" class="text-gray-700 hover:text-[#FE7303] font-medium transition">Contact</a>
+            </div>
+            <a href="index.html" class="md:hidden text-2xl text-[#0B4799]"><i class="ri-home-line"></i></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="relative h-96 bg-gradient-to-r from-[#0B4799] to-[#1E5CAD] flex items-center justify-center text-white px-4 overflow-hidden">
+        <div class="text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 hero-title">Special Education Services</h1>
+            <p class="text-xl md:text-2xl text-gray-100 hero-subtitle">Empowering every child to reach their full
+                potential</p>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="service-image">
+                <img src="https://i.pinimg.com/736x/79/ac/7e/79ac7ef8636ae2a7e85b66de1cbc1e40.jpg"
+                    alt="Special Education" class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+            </div>
+            <div class="service-content">
+                <h2 class="text-4xl font-bold text-[#0B4799] mb-6">What is Special Education?</h2>
+                <p class="text-gray-700 text-lg mb-4 leading-relaxed">Special Education provides innovative,
+                    personalized instruction and comprehensive support to students with learning disabilities,
+                    developmental delays, autism spectrum disorders, and other special needs. Our certified educators
+                    create inclusive learning environments where every child can thrive and succeed.</p>
+                <p class="text-gray-700 text-lg mb-6 leading-relaxed">Using evidence-based teaching methods and adaptive
+                    strategies, we help students develop academically, socially, and emotionally at their own unique
+                    pace with compassionate, expert guidance.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 service-feature">
+                        <i class="ri-award-line text-[#FE7303] text-2xl flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Certified Educators</h3>
+                            <p class="text-gray-600">Specialized training and extensive experience in special education
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 service-feature">
+                        <i class="ri-task-line text-[#FE7303] text-2xl flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Individualized Plans</h3>
+                            <p class="text-gray-600">Custom IEP tailored precisely to each student's unique needs</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex items-start gap-4 service-feature">
+                        <i class="ri-hand-heart-line text-[#FE7303] text-2xl flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Holistic Support</h3>
+                            <p class="text-gray-600">Complete academic, social, emotional, and behavioral development
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Offered -->
+    <section class="bg-blue-50 py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-[#0B4799] mb-12 text-center">Programs We Offer</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition border-l-4 border-[#FE7303] program-card">
+                    <i class="ri-book-open-line text-4xl text-[#FE7303] mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Literacy Programs</h3>
+                    <p class="text-gray-600">Adaptive reading and writing instruction customized to each student's level
+                    </p>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition border-l-4 border-[#FE7303] program-card">
+                    <i class="ri-calculator-line text-4xl text-[#FE7303] mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Numeracy Programs</h3>
+                    <p class="text-gray-600">Mathematics education with visual aids, manipulatives, and interactive
+                        methods</p>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition border-l-4 border-[#FE7303] program-card">
+                    <i class="ri-emotion-smile-line text-4xl text-[#FE7303] mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Social Skills Training</h3>
+                    <p class="text-gray-600">Building positive relationships, communication, and peer interaction skills
+                    </p>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition border-l-4 border-[#FE7303] program-card">
+                    <i class="ri-hand-heart-line text-4xl text-[#FE7303] mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Life Skills Training</h3>
+                    <p class="text-gray-600">Preparing students for independent living, employment, and adult
+                        responsibilities</p>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition border-l-4 border-[#FE7303] program-card">
+                    <i class="ri-parent-line text-4xl text-[#FE7303] mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Parent Training</h3>
+                    <p class="text-gray-600">Comprehensive support and guidance for families supporting their children
+                    </p>
+                </div>
+                <div
+                    class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition border-l-4 border-[#FE7303] program-card">
+                    <i class="ri-group-2-line text-4xl text-[#FE7303] mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Group Activities</h3>
+                    <p class="text-gray-600">Collaborative learning experiences and positive peer interaction
+                        opportunities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <h2 class="text-4xl font-bold text-[#0B4799] mb-12 text-center">Benefits of Special Education</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <div class="space-y-6">
+                    <div class="flex gap-4 benefit-item">
+                        <div
+                            class="bg-[#FFB71B] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
+                            1</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Customized Learning</h3>
+                            <p class="text-gray-600">Education perfectly tailored to individual learning styles and
+                                abilities</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 benefit-item">
+                        <div
+                            class="bg-[#FFB71B] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
+                            2</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Increased Confidence</h3>
+                            <p class="text-gray-600">Build self-esteem and confidence through achievable success
+                                experiences</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 benefit-item">
+                        <div
+                            class="bg-[#FFB71B] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
+                            3</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Better Academic Outcomes</h3>
+                            <p class="text-gray-600">Significant improvements in academic performance and progress</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="space-y-6">
+                    <div class="flex gap-4 benefit-item">
+                        <div
+                            class="bg-[#FFB71B] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
+                            4</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Family Support</h3>
+                            <p class="text-gray-600">Comprehensive guidance and resources for parents and caregivers</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 benefit-item">
+                        <div
+                            class="bg-[#FFB71B] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
+                            5</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Social Integration</h3>
+                            <p class="text-gray-600">Positive peer interaction and meaningful community inclusion</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 benefit-item">
+                        <div
+                            class="bg-[#FFB71B] text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
+                            6</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Future Preparation</h3>
+                            <p class="text-gray-600">Essential skills for employment, independence, and adult success
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <div class="bg-blue-50 rounded-2xl p-12 text-center cta-section">
+            <h2 class="text-4xl font-bold text-[#0B4799] mb-4">Let Your Child Shine</h2>
+            <p class="text-xl text-gray-700 mb-8">Enroll in our special education programs today</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button onclick="openBookingModal()"
+                    class="bg-[#FE7303] hover:bg-[#C75B00] text-white px-8 py-4 rounded-lg font-bold transition transform hover:scale-105">Book
+                    Assessment</button>
+                <button
+                    class="bg-[#0B4799] hover:bg-[#082A6B] text-white px-8 py-4 rounded-lg font-bold transition transform hover:scale-105">
+                    <i class="ri-phone-line mr-2"></i>Call Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal-content bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-[#0B4799]">Book Assessment</h3>
+                <button onclick="closeBookingModal()" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <form id="bookingForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Child's Name</label>
+                    <input type="text" id="bookingName" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FE7303]"
+                        placeholder="Enter child's name">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Parent/Guardian Phone</label>
+                    <input type="tel" id="bookingPhone" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FE7303]"
+                        placeholder="Enter your phone">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                    <textarea id="bookingMessage" rows="4"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FE7303]"
+                        placeholder="Tell us about your child's needs..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-[#FE7303] hover:bg-[#C75B00] text-white py-3 rounded-lg font-bold transition">
+                    <i class="ri-whatsapp-line mr-2"></i>Send via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B4799] text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2025 Rehabilitation Center. All rights reserved.</p>
+            <div class="flex justify-center gap-6">
+                <a href="index.html#services" class="hover:text-[#FFB71B] transition">Services</a>
+                <a href="#" class="hover:text-[#FFB71B] transition">Privacy</a>
+                <a href="#" class="hover:text-[#FFB71B] transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo('.hero-title', {
+            opacity: 0,
+            y: 30
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.2
+        });
+
+        gsap.fromTo('.hero-subtitle', {
+            opacity: 0,
+            y: 30
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.4
+        });
+
+        gsap.utils.toArray('.service-feature').forEach((el, index) => {
+            gsap.fromTo(el, {
+                opacity: 0,
+                x: -30
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+
+        gsap.utils.toArray('.program-card').forEach((el, index) => {
+            gsap.fromTo(el, {
+                opacity: 0,
+                y: 30
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+
+        gsap.utils.toArray('.benefit-item').forEach((el, index) => {
+            gsap.fromTo(el, {
+                opacity: 0,
+                x: index % 2 === 0 ? -30 : 30
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+
+        gsap.fromTo('.cta-section', {
+            opacity: 0,
+            scale: 0.95
+        }, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            scrollTrigger: {
+                trigger: '.cta-section',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('bookingName').value;
+            const phone = document.getElementById('bookingPhone').value;
+            const message = document.getElementById('bookingMessage').value;
+
+            const whatsappMessage = `Hi, I would like to inquire about Special Education services.\n\nChild's Name: ${name}\nParent Phone: ${phone}\n\nMessage: ${message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/8246902383?text=${encodedMessage}`, '_blank');
+
+            closeBookingModal();
+            this.reset();
+        });
+
+        document.getElementById('bookingModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeBookingModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
